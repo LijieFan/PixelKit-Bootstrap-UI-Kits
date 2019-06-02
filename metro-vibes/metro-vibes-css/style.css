@@ -1807,7 +1807,7 @@ input[type="password"]:focus{
 
 @media (min-width: 1200px) {
     .container.container-wide {
-        max-width: 1070px;
+        max-width: 1920px;
     }
 }
 
