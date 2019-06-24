@@ -2711,6 +2711,105 @@ input[type="password"]:focus{
     padding-bottom: 18px;
 }
 
+/*-----------------------------------*/
+/* Shuttle box */
+/*-----------------------------------*/
+
+.widget-shuttle{text-align: center;}
+.widget-shuttle strong{display:inline-block; font-weight: 700;}
+.widget-shuttle .title{
+    background: #fd6d4a;
+    padding: 20px;
+    -webkit-border-radius: 4px 4px 0 0;
+    -moz-border-radius: 4px 4px 0 0;
+    border-radius: 4px 4px 0 0;
+}
+.widget-shuttle .title strong{
+    font-size: 32px;
+    color: #fff;
+    height: 75px;
+    line-height: 35px;
+}
+.widget-shuttle .content{
+    background: #f6f0ec;
+    /*float: left;*/
+    /*width: 50%;*/
+    padding: 5px 5px;
+}
+.widget-shuttle .content strong{
+    /*width: 42px;*/
+    font-size: 28px;
+    color: #64584c;
+    padding-top: 18px;
+    padding-bottom: 18px;
+}
+
+/*-----------------------------------*/
+/* Bike box */
+/*-----------------------------------*/
+
+.widget-bike{text-align: center;}
+.widget-bike strong{display:inline-block; font-weight: 700;}
+.widget-bike .title{
+    background: #4a99fd;
+    padding: 20px;
+    -webkit-border-radius: 4px 4px 0 0;
+    -moz-border-radius: 4px 4px 0 0;
+    border-radius: 4px 4px 0 0;
+}
+.widget-bike .title strong{
+    font-size: 32px;
+    color: #fff;
+    height: 75px;
+    line-height: 35px;
+}
+.widget-bike .content{
+    background: #f6f0ec;
+    /*float: left;*/
+    /*width: 50%;*/
+    padding: 5px 5px;
+}
+.widget-bike .content strong{
+    /*width: 42px;*/
+    font-size: 28px;
+    color: #64584c;
+    padding-top: 18px;
+    padding-bottom: 18px;
+}
+
+/*-----------------------------------*/
+/* Announcement box */
+/*-----------------------------------*/
+
+.widget-announcement{text-align: center;}
+.widget-announcement strong{display:inline-block; font-weight: 700;}
+.widget-announcement .title{
+    background: #f6f0ec;
+    padding: 20px;
+    -webkit-border-radius: 4px 4px 0 0;
+    -moz-border-radius: 4px 4px 0 0;
+    border-radius: 4px 4px 0 0;
+}
+.widget-announcement .title strong{
+    font-size: 32px;
+    color: #64584c;
+    height: 5px;
+    line-height: 35px;
+}
+.widget-announcement .content{
+    background: #f6f0ec;
+    /*float: left;*/
+    /*width: 50%;*/
+    padding: 5px 5px;
+}
+.widget-announcement .content strong{
+    /*width: 42px;*/
+    font-size: 28px;
+    color: #64584c;
+    padding-top: 18px;
+    padding-bottom: 18px;
+}
+
 
 /*-----------------------------------*/
 /* Widget Weather */
