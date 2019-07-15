@@ -2651,26 +2651,26 @@ input[type="password"]:focus{
 
 .widget-time{text-align: center;}
 .widget-time strong{display:inline-block; font-weight: 700;}
-.widget-time .title{
+.widget-time .time{
     background: #54bc75;
     padding: 30px;
     -webkit-border-radius: 4px 4px 0 0;
     -moz-border-radius: 4px 4px 0 0;
     border-radius: 4px 4px 0 0;
 }
-.widget-time .title strong{
-    font-size: 58px;
+.widget-time .time strong{
+    font-size: 52px;
     color: #fff;
     height: 45px;
     line-height: 45px;
 }
-.widget-time .content{
+.widget-time .date{
     background: #f6f0ec;
     /*float: left;*/
     /*width: 50%;*/
     padding: 5px 5px;
 }
-.widget-time .content strong{
+.widget-time .date strong{
     /*width: 42px;*/
     font-size: 28px;
     color: #64584c;

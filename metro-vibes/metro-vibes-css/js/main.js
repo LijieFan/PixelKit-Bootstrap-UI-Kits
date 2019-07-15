@@ -143,8 +143,8 @@ function setupDateTime() {
     var postfix = "AM";
     if (hours >= 12) { postfix = "PM"; hours = hours % 12; }
     if (hours === 0) { hours = 12; }
-    $('#datetime .time').html(hours + ":" + minutes + postfix);
-    $('#datetime .date').html(days[date.getDay()] + ", " + (date.getMonth() + 1) + "/" + date.getDate() + "/" + date.getFullYear());
+    $('#datetime .time').html("<strong>" + hours + ":" + minutes + postfix + "</strong>");
+    $('#datetime .date').html("<strong>" + days[date.getDay()] + ", " + (date.getMonth() + 1) + "/" + date.getDate() + "/" + date.getFullYear() + "</strong>");
     setTimeout(setupDateTime, 1000); //refresh every second
 }
 
@@ -185,18 +185,13 @@ function setupNextBus() {
     });  
 }
 
-function hubway_html(data) {
-    var html = "";
-    html += "<span>(updated at " + data['time_updated'] + ")</span></br>";
-    html += "<div id='bike_dock'>" + data['num_bikes_available'] + " Bikes | " + data['num_docks_available'] + " Docks</div>";
-    if (html === "") { html = 'No prediction'; }
-    return html;
-}
-
 function setupHubway() {
     $.getJSON('data/hubway.json', function(data) {
         setTimeout(setupHubway, 5 * 1000); // refresh nextbus every 5 seconds
-        $("#sp_station").html(hubway_html(data));
+        $("#bike .title").html("<strong>BlueBikes@SP (updated at " +
+                               data['time_updated'] + "</strong>");
+        $("#bike .content").html("<strong>" + data['num_bikes_available'] + " Bikes | " +
+                                 data['num_docks_available'] + " Docks</strong>");
     });  
 }
 
@@ -603,9 +598,9 @@ function switchToMode(modeNum){
 $(document).ready(function() {
     // setTimeout('location.reload();', 10*60*60*1000);
     // setupSlides();
-    // setupDateTime();
+    setupDateTime();
     setupNextBus();
-    // setupHubway();
+    setupHubway();
     setupWeather();
     // setupNews();
     // fetchMovies();
