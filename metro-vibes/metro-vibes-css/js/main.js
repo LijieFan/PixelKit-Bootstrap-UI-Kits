@@ -152,12 +152,12 @@ function nextbus_html(times) {
     var html = "";
     times.forEach(function (d, i) {
         if (i === times.length - 1) {
-            html += d + " min";
+            html += "<strong>" + d + " min" + "</strong>" ;
         } else {
-            html += d + " | ";
+            html += "<strong>" + d + " | " + "</strong>" ;
         }
     });
-    if (html === "") { html = 'No prediction'; }
+    if (html === "") { html = "<strong>" +'No prediction'+"</strong>" ; }
     return html;
 }
 
@@ -604,7 +604,7 @@ $(document).ready(function() {
     // setTimeout('location.reload();', 10*60*60*1000);
     // setupSlides();
     // setupDateTime();
-    // setupNextBus();
+    setupNextBus();
     // setupHubway();
     setupWeather();
     // setupNews();
