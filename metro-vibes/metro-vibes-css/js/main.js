@@ -185,18 +185,13 @@ function setupNextBus() {
     });  
 }
 
-function hubway_html(data) {
-    var html = "";
-    html += "<span>(updated at " + data['time_updated'] + ")</span></br>";
-    html += "<div id='bike_dock'>" + data['num_bikes_available'] + " Bikes | " + data['num_docks_available'] + " Docks</div>";
-    if (html === "") { html = 'No prediction'; }
-    return html;
-}
-
 function setupHubway() {
     $.getJSON('data/hubway.json', function(data) {
         setTimeout(setupHubway, 5 * 1000); // refresh nextbus every 5 seconds
-        $("#sp_station").html(hubway_html(data));
+        $("#bike .title").html("<strong>BlueBikes@SP (updated at " +
+                               data['time_updated'] + "</strong>");
+        $("#bike .content").html("<strong>" + data['num_bikes_available'] + " Bikes | " +
+                                 data['num_docks_available'] + " Docks</strong>");
     });  
 }
 
@@ -605,7 +600,7 @@ $(document).ready(function() {
     // setupSlides();
     setupDateTime();
     // setupNextBus();
-    // setupHubway();
+    setupHubway();
     setupWeather();
     // setupNews();
     // fetchMovies();
