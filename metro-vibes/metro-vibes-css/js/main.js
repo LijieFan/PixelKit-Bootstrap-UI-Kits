@@ -143,8 +143,8 @@ function setupDateTime() {
     var postfix = "AM";
     if (hours >= 12) { postfix = "PM"; hours = hours % 12; }
     if (hours === 0) { hours = 12; }
-    $('#datetime .time').html(hours + ":" + minutes + postfix);
-    $('#datetime .date').html(days[date.getDay()] + ", " + (date.getMonth() + 1) + "/" + date.getDate() + "/" + date.getFullYear());
+    $('#datetime .time').html("<strong>" + hours + ":" + minutes + postfix + "</strong>");
+    $('#datetime .date').html("<strong>" + days[date.getDay()] + ", " + (date.getMonth() + 1) + "/" + date.getDate() + "/" + date.getFullYear() + "</strong>");
     setTimeout(setupDateTime, 1000); //refresh every second
 }
 
@@ -603,7 +603,7 @@ function switchToMode(modeNum){
 $(document).ready(function() {
     // setTimeout('location.reload();', 10*60*60*1000);
     // setupSlides();
-    // setupDateTime();
+    setupDateTime();
     // setupNextBus();
     // setupHubway();
     setupWeather();
