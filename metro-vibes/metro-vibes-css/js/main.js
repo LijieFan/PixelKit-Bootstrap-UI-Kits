@@ -596,14 +596,14 @@ function switchToMode(modeNum){
 }
 
 $(document).ready(function() {
-    // setTimeout('location.reload();', 10*60*60*1000);
-    // setupSlides();
+    setTimeout('location.reload();', 10*60*60*1000);
+    setupSlides();
     setupDateTime();
     setupNextBus();
     setupHubway();
     setupWeather();
     // setupNews();
-    // fetchMovies();
-    // fetchPastEventPhotos();
-    // displayPoemsLineByLine();
+    fetchMovies();
+    fetchPastEventPhotos();
+    displayPoemsLineByLine();
 });

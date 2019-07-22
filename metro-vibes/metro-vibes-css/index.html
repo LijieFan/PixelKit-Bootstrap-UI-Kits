@@ -16,6 +16,7 @@
 <script src="js/libs/jquery-1.10.0.js"></script>
 <script src="js/libs/jquery-ui.min.js"></script>
 <script src="js/libs/bootstrap.min.js"></script>
+<script src="https://d3js.org/d3.v5.min.js"></script>
 
 <!-- Style CSS -->
 <link href="css/bootstrap.css" media="screen" rel="stylesheet">
@@ -210,11 +211,65 @@
     <div class="col-sm-8">
         <!-- Widget shuttle -->
         <div class="widget-container widget-announcement boxed clearfix">
-            <div class="title"><strong>Tomorrow</strong></div>
+            <!-- <div class="title"><strong>Tomorrow</strong></div>
             <div class="avatar-image" style="width: 100%; height: 100%">
                 <img src="images/test.jpg" style="width: 100%; height: 100%">
+            </div> -->
+
+            <div id="slide" class="avatar-image" style="width: 100%; height: 100%">
+                <img id="slide-img" style="image-orientation:from-image">
             </div>
-        </div>
+
+            <div id="slide-when" style="display:none;" class="infobox"></div>
+            <div id="slide-when-past" style="visibility:hidden;" class="infobox"></div>
+
+            <div id="slide2" style="visibility:hidden">
+                <img id="slide-background" style="display:none" src="img/chalkboard.png" />
+                <svg width="100%" height="100%">
+                    <rect id="text_react" width="100%" height="100%" style="fill:rgb(22,23,167)" />
+                </svg>
+            </div>
+
+            <div id="paragraphs">
+                <p id="L1" />
+                <p id="L2" />
+                <p id="L3" />
+                <p id="L4" />
+                <p id="L5" />
+                <p id="L6" />
+                <p id="L7" />
+                <p id="L8" />
+            </div>
+
+            <div id="movie" style="visibility:hidden;">
+                <img id="movie-background" src="img/theater.png" />
+                <img id="movie-img">
+                <div class="infobox">
+                    <span>SP Movie Library</span><br />
+                    <span>New Arrivals!</span><br /><br />
+
+                    <span id="movie-title"></span><br /><br />
+                    <div class="info">
+                        <span class="small heading">Category:&nbsp;</span>
+                            <span id="movie-category" class="small"></span><br />
+                        <span class="small heading">IMDb:&nbsp;</span>
+                            <span id="imdb" class="small"></span><br />
+                        <span class="small heading">Format:&nbsp;</span>
+                            <span id="movie-format" class="small"></span><br /><br />
+                    </div>
+                    <i class="small">Check out today at the front desk!</i>
+                </div>
+            </div>
+
+            <div id="past-event" style="visibility:hidden;">
+                <img id="photo-frame-background" src="img/wood_frames.png" />
+                <img id="photo1" class="photo" />
+                <img id="photo2" class="photo" />
+                <img id="photo3" class="photo" />
+                <img id="photo4" class="photo" />
+                <img id="photo5" class="photo" />
+            </div>
+        </div>  <!-- end of widget-container-->
         <!--/ Widget shuttle -->
     </div>
     <!---------------- /column 2 ---------------->
