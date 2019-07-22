@@ -2790,7 +2790,7 @@ input[type="password"]:focus{
     -moz-border-radius: 4px 4px 0 0;
     border-radius: 4px 4px 0 0;
 }
-.widget-announcement .title strong{
+.widget-announcement .title{
     font-size: 32px;
     color: #64584c;
     height: 5px;
