@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <script src="js/vendor/jquery-1.9.1.min.js"></script>
+        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+        <script src="https://d3js.org/d3.v5.min.js"></script>
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet/less" type="text/css" href="css/styles.less" />
+        <link href="https://fonts.googleapis.com/css?family=Caveat" rel="stylesheet">
+    </head>
+    <body>
+        <!-- Addi your site or application content here -->
+        
+        <!-- Center -->
+        <img id="background" src="img/bg.jpg" />
+        
+        <div id="slide">
+            <img id="slide-img" style="image-orientation:from-image"> 
+        </div> 
+        
+        <div id="slide-when" style="display:none;" class="infobox"></div>
+        <div id="slide-when-past" style="visibility:hidden;" class="infobox"></div>
+
+        <div id="slide2" style="visibility:hidden">
+            <img id="slide-background" style="display:none" src="img/chalkboard.png" />
+            <svg width="100%" height="100%">
+                <rect id="text_react" width="100%" height="100%" style="fill:rgb(22,23,167)" />
+            </svg>
+        </div>
+        
+        <div id="paragraphs">
+            <p id="L1" />
+            <p id="L2" />
+            <p id="L3" />
+            <p id="L4" />
+            <p id="L5" />
+            <p id="L6" />
+            <p id="L7" />
+            <p id="L8" />
+        </div>
+
+        <div id="movie" style="visibility:hidden;">
+            <img id="movie-background" src="img/theater.png" />
+            <img id="movie-img">
+            <div class="infobox">
+                <span>SP Movie Library</span><br />
+                <span>New Arrivals!</span><br /><br />
+
+                <span id="movie-title"></span><br /><br />
+                <div class="info">
+                    <span class="small heading">Category:&nbsp;</span>
+                        <span id="movie-category" class="small"></span><br />
+                    <span class="small heading">IMDb:&nbsp;</span>
+                        <span id="imdb" class="small"></span><br />
+                    <span class="small heading">Format:&nbsp;</span>
+                        <span id="movie-format" class="small"></span><br /><br />
+                </div>
+                <i class="small">Check out today at the front desk!</i>
+            </div>
+        </div>
+
+        <div id="past-event" style="visibility:hidden;">
+            <img id="photo-frame-background" src="img/wood_frames.png" />
+            <img id="photo1" class="photo" />
+            <img id="photo2" class="photo" />
+            <img id="photo3" class="photo" />
+            <img id="photo4" class="photo" />
+            <img id="photo5" class="photo" />
+        </div>
+        
+        <!-- Working code for playing video through Youtube
+        <div  style="position: absolute; width:100% ; height:100% ">
+            <iframe style="height: 75%; width: 54%; position:relative; top: 14%; left: 23%"
+                src="http://www.youtube.com/embed/Yxh0kWS660I?autoplay=1">
+            </iframe> 
+        </div> 
+        -->
+        
+        <!-- Infobox --> 
+        
+        <div id="datetime" class="widget-container widget-time boxed clearfix">
+            <div class="time"></div>
+            <div class="date"></div>
+        </div>
+        
+        <div id="weather" class="widget-container widget-weather-text boxed clearfix">
+            <div class="title"><strong>Now</strong></div>
+            <div class="content"></div>
+        </div>
+        
+        <div id="weather2" class="widget-container widget-weather-text boxed clearfix">
+            <div class="title"><strong>In 3 hrs</strong></div>
+            <div class="content"></div>
+        </div>
+
+        <div id="weather3" class="widget-container widget-weather-text boxed clearfix">
+            <div class="title"><strong>In 6 hrs</strong></div>
+            <div class="content"></div>
+        </div>
+        
+        <div id="newsfeed" class="infobox">
+            <div id="newsline"></div>
+        </div>
+        
+        <div id="nextbus" class="widget-container widget-shuttle boxed clearfix">
+            <div id="TraderJoes_title" class="title"><strong>Trader Joes<br>Whole Foods<br>(Sunday)</strong></div>
+            <div id="TraderJoes" class="content"></div>
+            <br>
+            <br>
+            <br>
+            <div id="SaferideCS_title" class="title"><strong>Saferide<br>(6pm-2am)</strong></div>
+            <div id="Saferide" class="content"></div>
+            <br>
+            <br>
+            <br>
+            <div id="EZRide_title" class="title"><strong>EZRide<br>(6am-8pm)</strong></div>
+            <div id="EZRide" class="content"></div>
+        </div>
+
+        <div id="hubway" class="widget-container widget-bike boxed clearfix">
+            <div class="title"></div>
+            <div class="content"></div>
+        </div>
+        
+        <script src="js/main.js"></script>  <!-- reads external SPTV JavaScript here -->
+        <script type="text/javascript">
+            less = {
+                env: "development", // or "production"
+            };
+        </script>
+        <script src="js/vendor/less-1.4.1.min.js" type="text/javascript"></script>
+        <script type="text/javascript">
+            function destroyLessCache(pathToCss) { // e.g. '/css/' or '/stylesheets/'
+              if (!window.localStorage ) {
+                return;
+              }
+              var host = window.location.host;
+              var protocol = window.location.protocol;
+              var keyPrefix = protocol + '//' + host + pathToCss;
+              for (var key in window.localStorage) {
+                if (key.indexOf(keyPrefix) === 0) {
+                  delete window.localStorage[key];
+                }
+              }
+            }
+            destroyLessCache('/css/');
+        </script>
+        
+    </body>
+</html>
